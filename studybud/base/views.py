@@ -22,4 +22,4 @@ def room(request, pk):
             room = i
     context = {"rooms": rooms}
     return render(request, "base/room.html", context)
-# ,{"rooms" : rooms})
+# ,{"rooms" : rooms})kkk
