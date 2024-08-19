@@ -14,6 +14,11 @@ class Room(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+class Message(models.Model):
+    username = models.CharField(max_length=899)
+    room = models.ForeignKey(Room, on_delete=models.SET_NULL)
 
 
 
