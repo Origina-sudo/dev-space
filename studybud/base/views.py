@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate , login ,logout
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
+from django.contrib.auth.forms import UserCreationForm
 
 
 # rooms =[
@@ -49,8 +50,8 @@ def logoutUser(request):
     return redirect('home')
 
 def registerPage(request):
-    page = 'register'
-    return render(request, "base/login_register.html")
+    form = UserCreationForm()
+    return render(request, "base/login_register.html", {'form' : form})
 
 def home(request):
     q = request.GET.get("q") if request.GET.get("q") != None else ""
