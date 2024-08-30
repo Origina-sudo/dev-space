@@ -6,6 +6,9 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate , login ,logout
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse
+
+
 # rooms =[
 #     {"id":1,"name":"lets Learn Python!"},
 #     {"id":2,"name":"Design with me"},
@@ -73,6 +76,9 @@ def createRoom(request):
 def updateRoom(request, pk):
     room = Room.objects.get(id=pk)
     form = RoomForm(instance=room)
+
+    if request.user != room.user:
+        return HttpResponse("You are not allowed here!!")
 
     if request.method == 'POST':
         form = RoomForm(request.POST, instance=room)
