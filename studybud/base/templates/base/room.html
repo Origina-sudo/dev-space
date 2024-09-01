@@ -8,13 +8,13 @@
     <div class="coment-wrapper">
         <h3>Conversations</h3>
         <hr>
-        <div>
-            
-        </div>
+       
 
         {% for message messages %}
-
-        { %endfor %}
+        <div>
+            <small>@{{message.user}} {{message.created}}</small>
+        </div>
+        {% endfor %}
     </div>
 {% endblock %}
 
