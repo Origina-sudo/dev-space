@@ -77,8 +77,8 @@ def home(request):
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
-    messages = room.message_set.all()
-    context = {"room": room, "messages" : messages}
+    room_messages = room.message_set.all()
+    context = {"room": room, "room_messages" : room_messages}
     return render(request, "base/room.html", context)
 
 
