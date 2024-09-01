@@ -1,5 +1,5 @@
 {% extends "main.html" %} {% block content %}
-
+<div>
 <h1>{{room.name}}</h1>
 
 <p>{{room.description}}</p>
@@ -22,6 +22,7 @@
     {% csrf_token %}
     <input type="text" name="body" placeholder="Write your messages here..." />
   </form>
+</div>
 </div>
 
 {% endif %}
