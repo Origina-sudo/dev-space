@@ -78,7 +78,8 @@ def home(request):
 def room(request, pk):
     room = Room.objects.get(id=pk)
     room_messages = room.message_set.all().order_by('-created')
-
+    participants = room.participants_set.all()
+    
     if request.method == 'POST':
         message = Message.objects.create(
             user = request.user,
