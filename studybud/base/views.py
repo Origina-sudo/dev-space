@@ -17,7 +17,7 @@ from django.contrib.auth.forms import UserCreationForm
 # ]
 
 
-# Create your views here.
+# Create your views here.j
 
 
 def loginPage(request):
